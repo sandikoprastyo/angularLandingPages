@@ -1,0 +1,14 @@
+<div *ngIf="messageService.messages.length">
+  
+  <div *ngFor="let message of messageService.messages">{{ message }}</div>
+
+  <button type="button" class="clear" (click)="messageService.clear()">
+    Clear messages
+  </button>
+</div>
+
+<!-- 
+  Copyright Google LLC. All Rights Reserved.
+  Use of this source code is governed by an MIT-style license that
+  can be found in the LICENSE file at https://angular.io/license
+  -->

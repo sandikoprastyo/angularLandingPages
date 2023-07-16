@@ -1,0 +1,64 @@
+<div class="heroes">
+  <h3>HEROES</h3>
+  <p>Get your heroes here</p>
+
+  <div class="wrapper">
+    <p *ngIf="Hero">Hero</p>
+    <p *ngIf="Monster">Monster</p>
+  </div>
+  <div class="button">
+    <button (click)="handleClickHero()" class="hero">Hero</button>
+    <button (click)="handleClickMonster()" class="hero">Monster</button>
+  </div>
+
+  <br />
+  <br />
+
+  <div class="list-heroes">
+    <h2>Heroes List</h2>
+
+    <div class="input-heroes">
+      <input id="new-hero" #heroName />
+
+      <ul class="search-result">
+        <li *ngFor="let hero of heroes$ | async">
+          <a routerLink="/heroes/{{ hero.id }}">
+            {{ hero.name }}
+          </a>
+        </li>
+      </ul>
+
+      <!-- (click) passes input value to add() and then clears the input -->
+      <button
+        type="button"
+        class="add-button"
+        (click)="add(heroName.value); heroName.value = ''"
+      >
+        Add hero
+      </button>
+      <button
+        type="button"
+        class="search-button"
+        (click)="search(heroName.value)"
+      >
+        Search hero
+      </button>
+    </div>
+    <app-messages></app-messages>
+    <ul>
+      <li *ngFor="let hero of heroes">
+        <div type="button-hero">
+          <span class="name">{{ hero.name }}</span>
+          <button
+            type="button"
+            class="delete"
+            title="delete hero"
+            (click)="delete(hero)"
+          >
+            x
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

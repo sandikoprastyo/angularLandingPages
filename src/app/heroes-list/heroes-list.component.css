@@ -1,0 +1,41 @@
+.heroes {
+  width: 100%;
+  height: 100%;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  border: 1px solid black;
+  padding: 130px;
+  border-radius: 10px;
+  margin-top: 50px;
+}
+
+.button {
+  padding-top: 10px;
+}
+
+.button > .hero{
+  margin-right: 5px;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+
+.list-heroes{
+  padding: 10px;
+}
+
+.list-heroes> ul > li {
+  padding: 10px;
+}
+
+.delete{
+  width: 20px;
+  border-radius: 20px;
+  margin-left: 10px;
+}

@@ -1,0 +1,19 @@
+<h3>Contact</h3>
+<div class="cart-item" *ngFor="let item of items">
+  <span>{{ item.name }} </span>
+  <span>{{ item.email | currency }}</span>
+</div>
+
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="name"> Name </label>
+    <input id="name" type="text" formControlName="name" />
+  </div>
+
+  <div>
+    <label for="email"> Email </label>
+    <input id="email" type="text" formControlName="email" />
+  </div>
+
+  <button class="button" type="submit">Submit</button>
+</form>
